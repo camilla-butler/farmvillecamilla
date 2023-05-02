@@ -13,13 +13,13 @@ public class plot {
         if (num == 0) {
             plantName = "sunflower";
         }
-        if (num == 2){
+       else if (num == 2){
             plantName = "basil";
         }
-        if (num == 3){
+        else if (num == 3){
             plantName = "carrot";
         }
-        if (num == 4){
+       else if (num == 4){
             plantName = "tomato";
         }
        else{
