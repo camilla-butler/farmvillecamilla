@@ -25,7 +25,9 @@ public class myfarm {
         printplantnames();
         totalCarrots();
         averagenumberofplants();
-        everyOtherNeedsWater();
+        //  everyOtherNeedsWater();
+        plotwithmaxnumber();
+        plantwithmaxnumber();
     }
 
 
@@ -79,20 +81,78 @@ public class myfarm {
         System.out.println("the average number of plants is " + sumofplants / (grid.length * grid[0].length));
     }
 
-    public void everyOtherNeedsWater() {
+    //public void everyOtherNeedsWater() {
 
 
 
                 // change the value of needsWater to be true for every other plot
                 // print the value or needs water for all plots row by row
 
+       //     }
+
+          public void plotwithmaxnumber(){
+        int maxnumber = grid[0][0].numberOfPlant;
+        String name = grid[0][0].plantName;
+        for(int b = 0; b< grid.length; b++)
+            for(int g=0; g< grid[b].length; g++){
+                if(grid[b][g].numberOfPlant>maxnumber) {
+                    maxnumber = grid[b][g].numberOfPlant;
+                    name = grid[b][g].plantName;
+
+
+                }
+
+
+
+
             }
+              System.out.println( name +" has the most plants with a total of  " + maxnumber +" plants");
 
-        }
+          }
+    public void plantwithmaxnumber() {
+        int numCorn = 0;
+        int numTomato = 0;
+        int numCarrot = 0;
+        int numSunflower = 0;
 
 
+        for (int b = 0; b < grid.length; b++)
+            for (int g = 0; g < grid[b].length; g++) {
+                switch (grid[b][g].plantName) {
+                    case "corn":
+                        numCorn += grid[b][g].numberOfPlant;
+                        break;
+                    case "tomato":
+                        numTomato += grid[b][g].numberOfPlant;
+                        break;
+                    case "Sunflower":
+                        numSunflower += grid[b][g].numberOfPlant;
+                        break;
+                    default:
+                        numCarrot += grid[b][g].numberOfPlant;
+                        break;
+                }
+                if (numCorn > numCarrot && numCorn > numSunflower && numCorn > numTomato) {
+                    System.out.println("Corn has the most plants with " + numCorn + " plants");
 
 
+                }
+                if (numTomato > numCarrot && numTomato > numSunflower && numTomato > numCorn) {
+                    System.out.println("Tomato has the most plants with " + numTomato + " plants");
+
+
+                }
+                if (numSunflower > numCarrot && numSunflower > numCorn && numSunflower > numTomato) {
+                    System.out.println("Sunflower has the most plants with " + numSunflower + " plants");
+
+                }
+                else{
+                    System.out.println("idk what plant has the most");
+                }
+            }
+    }
+
+    }
 
 
 
