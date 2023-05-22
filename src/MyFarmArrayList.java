@@ -26,6 +26,9 @@ public class MyFarmArrayList {
         printPlantName();
         addcorn();
         printPlantName();
+        tomatolocations();
+        totalcarrots();
+        averageNumberOfPlants();
     }
 
 
@@ -68,6 +71,43 @@ public class MyFarmArrayList {
         row.add(3,corn);
 
     }
+    public void tomatolocations(){
+        for(int m = 0; m<row.size(); m++){
+            if( row.get(m).plantName.equals("tomato")){
+                System.out.println(m);
+
+            }
+        }
+
+
+    }
+    public void totalcarrots(){
+        int numberofcarrots = 0;
+        for(plot b: row){
+            if(b.plantName.equals("carrot"))
+        numberofcarrots+=b.numberOfPlant;
+
+        }
+        System.out.println("total number of carrots is " + numberofcarrots);
+    }
+    public void averageNumberOfPlants() {
+        int averageplants1 = 0;
+        for (plot h : row) {
+            averageplants += h.numberOfPlant;
+        }
+           double averageplants2 = 0;
+           for (plot e : row) {
+               averageplants2 += h.numberofPlant / e.numberOfPlant
+           }
+
+       System.out.println("the averge number of plants is " + averageplants);
+
+
+
+    }
+        // what is the average number of plants across the whole row?
+
+
 }
 
 
