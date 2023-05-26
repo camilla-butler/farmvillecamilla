@@ -25,10 +25,12 @@ public class MyFarmArrayList {
         addSunflower();
         printPlantName();
         addcorn();
-        printPlantName();
         tomatolocations();
         totalcarrots();
+        everyotherneedswater();
         averageNumberOfPlants();
+        printRowInfo();
+        numberOfEmptyPlots();
     }
 
 
@@ -68,46 +70,70 @@ public class MyFarmArrayList {
         corn.numberOfPlant = 70;
         corn.needsWater = false;
         corn.printPlot();
-        row.add(3,corn);
+        row.add(3, corn);
 
     }
-    public void tomatolocations(){
-        for(int m = 0; m<row.size(); m++){
-            if( row.get(m).plantName.equals("tomato")){
+
+    public void tomatolocations() {
+        for (int m = 0; m < row.size(); m++) {
+            if (row.get(m).plantName.equals("tomato")) {
                 System.out.println(m);
 
             }
         }
-
-
     }
-    public void totalcarrots(){
+
+    public void totalcarrots() {
         int numberofcarrots = 0;
-        for(plot b: row){
-            if(b.plantName.equals("carrot"))
-        numberofcarrots+=b.numberOfPlant;
+        for (plot b : row) {
+            if (b.plantName.equals("carrot"))
+                numberofcarrots += b.numberOfPlant;
 
         }
         System.out.println("total number of carrots is " + numberofcarrots);
     }
-    public void averageNumberOfPlants() {
-        int averageplants1 = 0;
-        for (plot h : row) {
-            averageplants += h.numberOfPlant;
+
+
+    public void everyotherneedswater() {
+        for (int n = 0; n < row.size(); n++) {
+            if (n % 2 == 1) {
+                row.get(n).needsWater = false;
+            } else {
+                row.get(n).needsWater = true;
+            }
         }
-           double averageplants2 = 0;
-           for (plot e : row) {
-               averageplants2 += h.numberofPlant / e.numberOfPlant
-           }
+    }
 
-       System.out.println("the averge number of plants is " + averageplants);
-
-
+    public void printRowInfo() {
+        for (plot a : row) {
+            a.printPlot();
+        }
 
     }
-        // what is the average number of plants across the whole row?
+
+    public void numberOfEmptyPlots() {
+        int numberofempty = 0;
+        for (plot q : row) {
+            if (q.plantName.equals("empty"))
+                numberofempty += 1;
+
+        }
+        System.out.println("total number of empty plots is " + numberofempty);
+    }
+
+    public void averageNumberOfPlants() {
+        int total = 0;
+
+        for (plot a : row) {
+            total += a.numberOfPlant;
+        }
+
+        System.out.println("total plant in my farm is " + total/a.plot(););
+
+    }
+        }
 
 
-}
+
 
 
